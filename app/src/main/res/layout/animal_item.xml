@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    tools:backgroundTint="@color/cardview_shadow_start_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/animal_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/animal_imageView"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_margin="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:backgroundTint="@color/white"/>
+
+        <TextView
+            android:id="@+id/animal_textView_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="40dp"
+            app:layout_constraintStart_toEndOf="@id/animal_imageView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="This is the animal name"/>
+
+        <TextView
+            android:id="@+id/animal_textView_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="40dp"
+            app:layout_constraintStart_toEndOf="@id/animal_imageView"
+            app:layout_constraintTop_toTopOf="@id/animal_textView_name"
+            tools:text="this is the animal location"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

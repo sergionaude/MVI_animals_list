@@ -1,9 +1,11 @@
-package com.sergionaude.mvi_animals_list.view
+package com.sergionaude.mvi_animals_list.vm
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.sergionaude.mvi_animals_list.api.AnimalRepository
+import com.sergionaude.mvi_animals_list.view.MainIntent
+import com.sergionaude.mvi_animals_list.view.MainState
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -37,7 +39,7 @@ class MainViewModel(private val animalRepository: AnimalRepository, application:
         viewModelScope.launch {
             _userStates.value = MainState.Loading
             _userStates.value = try {
-             MainState.Animals(animalRepository.getAnimals())
+                MainState.Animals(animalRepository.getAnimals())
             }
             catch (e: Exception){
                 MainState.Error("${e.message}")
