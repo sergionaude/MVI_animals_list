@@ -11,7 +11,6 @@ import com.sergionaude.mvi_animals_list.model.Animal
 
 class AnimalViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
 
-
     private val animalImage = itemView.findViewById<ImageView>(R.id.animal_imageView)
     private val animalName = itemView.findViewById<TextView>(R.id.animal_textView_name)
     private val animalLocation = itemView.findViewById<TextView>(R.id.animal_textView_location)
@@ -19,8 +18,8 @@ class AnimalViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
     fun bind(animal: Animal){
         animalName.text = animal.name
         animalLocation.text =  animal.location
-        val url = AnimalService.BASE_URL + animal
-        Glide.with(itemView.context)
+        val url = AnimalService.BASE_URL + animal.image
+        Glide.with(animalImage.context)
             .load(url)
             .into(animalImage)
     }

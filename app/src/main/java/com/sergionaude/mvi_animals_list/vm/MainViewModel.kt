@@ -2,6 +2,7 @@ package com.sergionaude.mvi_animals_list.vm
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.sergionaude.mvi_animals_list.api.AnimalRepository
 import com.sergionaude.mvi_animals_list.view.MainIntent
@@ -12,9 +13,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.launch
 
-class MainViewModel(private val animalRepository: AnimalRepository, application: Application) : AndroidViewModel(application){
+class MainViewModel(private val animalRepository: AnimalRepository) : ViewModel(){
 
-    private val userIntent = Channel<MainIntent>(Channel.UNLIMITED)
+    val userIntent = Channel<MainIntent>(Channel.UNLIMITED)
 
     private val _userStates = MutableStateFlow<MainState>(MainState.Idle)
     val userState : StateFlow<MainState>

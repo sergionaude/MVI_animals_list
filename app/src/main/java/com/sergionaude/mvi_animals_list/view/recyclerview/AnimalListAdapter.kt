@@ -8,7 +8,7 @@ import com.sergionaude.mvi_animals_list.model.Animal
 
 class AnimalListAdapter(private val animalList : MutableList<Animal> = mutableListOf<Animal>()) : RecyclerView.Adapter<AnimalViewHolder>()
 {
-    private fun newAnimals(newAnimalList : List<Animal>){
+    fun newAnimals(newAnimalList : List<Animal>){
         animalList.clear()
         animalList.addAll(newAnimalList)
         notifyDataSetChanged()
